@@ -14,6 +14,14 @@
 ### dotfiles
 - sample .bash_profile
 
+## Linux
+
+### Vagrant
+
+CentOS 7
+- php, Apache
+- other packages
+
 ## Windows
 
 ### Chocolatey
