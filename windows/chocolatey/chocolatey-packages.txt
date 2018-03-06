@@ -1,0 +1,3 @@
+choco install cyg-get -y
+choco install git.install -y
+choco install jdk8 -y

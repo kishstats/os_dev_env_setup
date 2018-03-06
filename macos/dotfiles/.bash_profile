@@ -24,3 +24,8 @@ function take {
      mkdir $1
      cd $1
 }
+
+newvenv() {
+  virtualenv -p python3 venv --always-copy
+  source venv/bin/activate
+}

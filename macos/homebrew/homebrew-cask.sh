@@ -25,3 +25,4 @@ brew cask install google-earth
 brew cask install sqlitebrowser
 brew cask install insomnia
 brew cask install ngrok
+brew cask install abricotine

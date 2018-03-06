@@ -13,3 +13,9 @@
 
 ### dotfiles
 - sample .bash_profile
+
+## Windows
+
+### Chocolatey
+
+### Cygwin
