@@ -14,6 +14,7 @@ source $(brew --prefix autoenv)/activate.sh
 export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
 alias ll='ls -lGa'
+alias gitorigin="git config --get remote.origin.url"
 
 fetchgit() {
   git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
