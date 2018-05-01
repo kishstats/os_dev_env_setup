@@ -8,13 +8,16 @@ export PATH=/usr/local/bin:$PATH
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm use 8.9.4
+nvm use 8.11.1
 
 source $(brew --prefix autoenv)/activate.sh
 export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
 alias ll='ls -lGa'
+
+# git aliases
 alias gitorigin="git config --get remote.origin.url"
+alias ggraph="git log --graph --pretty=oneline --abbrev-commit"
 
 fetchgit() {
   git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
@@ -29,4 +32,8 @@ function take {
 newvenv() {
   virtualenv -p python3 venv --always-copy
   source venv/bin/activate
+}
+
+myextip() {
+  lynx --dump http://ipecho.net/plain;
 }

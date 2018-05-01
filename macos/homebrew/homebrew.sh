@@ -107,6 +107,7 @@ brew install findutils
 brew install autoenv
 brew install postgresql@9.4
 brew install redis
+brew install lynx
 
 brew services start postgresql@9.4
 brew services start redis

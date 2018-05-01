@@ -26,3 +26,4 @@ brew cask install sqlitebrowser
 brew cask install insomnia
 brew cask install ngrok
 brew cask install abricotine
+brew cask install alfred
