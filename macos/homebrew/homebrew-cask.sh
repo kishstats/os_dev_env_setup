@@ -27,3 +27,4 @@ brew cask install insomnia
 brew cask install ngrok
 brew cask install abricotine
 brew cask install alfred
+brew cask install visual-studio-code

@@ -13,7 +13,7 @@ nvm use 8.11.1
 source $(brew --prefix autoenv)/activate.sh
 export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 
-alias ll='ls -lGa'
+alias ll='ls -lGah'
 
 # git aliases
 alias gitorigin="git config --get remote.origin.url"
