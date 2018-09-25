@@ -5,6 +5,8 @@ sudo apt-get install curl -y
 sudo apt-get install git -y
 sudo apt-get install tree -y
 sudo apt-get install exfat-fuse exfat-utils -y
+sudo apt-get install ruby -y
+sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
 
 sudo apt-get install vlc -y
 sudo apt-get install keepassxc -y
@@ -18,6 +20,13 @@ sudo apt-get install python3-pip -y
 sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update -y
 sudo apt-get install atom -y
+
+# visual studio code
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get update -y
+sudo apt-get install code -y
 
 # nodejs
 sudo apt-get install nodejs -y
@@ -46,3 +55,20 @@ sudo apt-get install mongodb-org -y
 sudo systemctl stop mongod.service
 sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
+
+# virtualbox
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+sudo apt-get update -y
+sudo apt-get install virtualbox-5.2 -y
+# vagrant
+wget https://releases.hashicorp.com/vagrant/2.1.1/vagrant_2.1.1_x86_64.deb -O /tmp/install.deb
+sudo dpkg -i /tmp/install.deb
+
+# docker
+wget -qO- https://get.docker.com/ | sh
+sudo usermod -aG docker $(whoami)
+sudo apt-get install docker-compose
+
+sudo cp ./dotfiles/.vimrc ~

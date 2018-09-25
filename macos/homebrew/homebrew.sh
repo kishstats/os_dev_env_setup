@@ -111,3 +111,8 @@ brew install lynx
 
 brew services start postgresql@9.4
 brew services start redis
+
+brew install composer
+composer global require "laravel/installer"
+composer global require laravel/valet
+valet install
