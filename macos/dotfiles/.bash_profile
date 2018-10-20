@@ -30,6 +30,7 @@ function take {
 }
 
 newvenv() {
+	pip install --upgrade virtualenv
   virtualenv -p python3 venv --always-copy
   source venv/bin/activate
 }
