@@ -7,7 +7,15 @@ fetchgit() {
   git fetch --all
 }
 
+alias gitorigin="git config --get remote.origin.url"
+
 function take {
   mkdir $1
   cd $1
+}
+
+newvenv() {
+	pip install --upgrade virtualenv
+  virtualenv -p python3 venv --always-copy
+  source venv/bin/activate
 }
