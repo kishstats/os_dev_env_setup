@@ -16,4 +16,3 @@ do
 done
 
 brew cleanup
-brew cask cleanup

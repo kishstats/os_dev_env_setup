@@ -6,9 +6,11 @@ sudo apt-get install git -y
 sudo apt-get install tree -y
 sudo apt-get install exfat-fuse exfat-utils -y
 sudo apt-get install ruby -y
+sudo apt-get install linkchecker -Y
 sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
 
 sudo apt-get install vlc -y
+sudo apt-get install vlc-plugin-access-extra -y
 sudo apt-get install keepassxc -y
 sudo apt-get install terminator -y
 
