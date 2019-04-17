@@ -14,13 +14,25 @@
 ### dotfiles
 - sample .bash_profile
 
+---
+
 ## Linux
+
+### Ubuntu
+
+Ubuntu Server 16.04
+
+Ubuntu Desktop 18.04
 
 ### Vagrant
 
 CentOS 7
 - php, Apache
 - other packages
+
+Ubuntu 14.04
+
+---
 
 ## Windows
 
