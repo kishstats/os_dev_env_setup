@@ -8,6 +8,10 @@ sudo apt-get install exfat-fuse exfat-utils -y
 sudo apt-get install ruby -y
 sudo apt-get install linkchecker -Y
 sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
+sudo apt-get install ntp -y
+sudo apt-get install htop -y
+sudo apt-get install net-tools -y
+sudo apt-get install default-jre -y
 
 sudo apt-get install vlc -y
 sudo apt-get install vlc-plugin-access-extra -y
@@ -17,6 +21,8 @@ sudo apt-get install terminator -y
 # python
 sudo apt-get install python-pip -y
 sudo apt-get install python3-pip -y
+sudo apt-get install python-virtualenv -y
+sudo apt-get install libxml2-dev libxslt-dev python-dev
 
 # atom
 sudo add-apt-repository ppa:webupd8team/atom
@@ -41,9 +47,12 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 sudo chown www-data:www-data /usr/share/nginx/html/ -R
 
-sudo apt-get install mysql-server -y
+# mysql
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install mysql-server-5.7
 sudo systemctl enable mysql
 sudo systemctl start mysql
+sudo apt-get install mysql-workbench
 
 sudo apt-get install php7.2 php7.2-fpm php7.2-mysql php-common php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-readline php7.2-mbstring php7.2-xml php7.2-gd php7.2-curl php7.2-xml -y
 sudo systemctl start php7.2-fpm
@@ -57,6 +66,9 @@ sudo apt-get install mongodb-org -y
 sudo systemctl stop mongod.service
 sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
+
+# redis
+sudo apt-get install redis-server -y
 
 # virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
@@ -74,3 +86,29 @@ sudo usermod -aG docker $(whoami)
 sudo apt-get install docker-compose
 
 sudo cp ./dotfiles/.vimrc ~
+
+# Insomnia REST Client
+# Add to sources
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+# Add public key used to verify code signature
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+# Refresh repository sources and install Insomnia
+sudo apt-get update
+sudo apt-get install insomnia
+
+## Elasticsearch ##
+# Java 8 dependency
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt install oracle-java8-installer
+# necessary if multiple versions of Java are installed
+sudo update-alternatives --config java
+
+# Actually install Elasticsearch
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt update
+sudo apt install elasticsearch
+sudo systemctl start elasticsearch
