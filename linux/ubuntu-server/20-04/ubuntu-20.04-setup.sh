@@ -21,7 +21,9 @@ nvm use 14.5.1
 npm install --global gulp karma-cli
 
 # mysql
-sudo apt-get install mysql-server-5.7 -y
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password <password here>'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password <password here>'
+sudo apt-get install mysql-server -y
 sudo systemctl enable mysql
 sudo systemctl start mysql
 
