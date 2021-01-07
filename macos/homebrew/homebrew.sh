@@ -96,8 +96,8 @@ brew install watchman
 brew install freetype
 brew install gradle
 brew install libmpc
-brew install mongodb
-brew install php71
+
+brew install php@7.4
 brew install sdl
 brew install erlang
 brew install perl
@@ -108,6 +108,13 @@ brew install autoenv
 brew install postgresql@9.4
 brew install redis
 brew install lynx
+
+# see URL below to get latest version
+# https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+brew tap mongodb/brew
+brew install mongodb-community@4.4
+# run as a service
+# brew services start mongodb-community@4.4
 
 brew services start postgresql@9.4
 brew services start redis
